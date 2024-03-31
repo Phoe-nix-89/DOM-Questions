@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <button id="btn1" onclick="button1()">Login</button>
+    <button id="btn2" onclick="button2()">Logout</button>
+    <h1 id="h1"></h1>
+
+    <script>
+        let btn1 = document.getElementById('btn1')
+        let btn2 = document.getElementById('btn2')
+        let h1 = document.getElementById('h1')
+
+        function button1() {
+            h1.innerHTML = "User is logged in"
+        }
+        function button2() {
+            h1.innerHTML = "User has not logged in"
+        }
+    </script>
+
+</body>
+</html>

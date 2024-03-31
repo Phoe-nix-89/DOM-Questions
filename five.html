@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cng{
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <h1 id="h1" style="margin-bottom: 15px;">Your Image is Visible</h1>
+    <button style="margin-bottom: 6px;" id="btn" onclick="change()">Toggle Image</button>
+    <img style="display: block;" id="img" src="img.png" alt="">
+
+
+    <script>
+        let btn = document.getElementById('btn')
+        let h1 = document.getElementById('h1')
+        let img = document.getElementById('img')
+
+        function change() {
+            if(h1.innerHTML == "Your Image is Visible"){
+                h1.innerHTML = "Your Image is Hidden"
+            }
+            else{
+                h1.innerHTML = "Your Image is Visible"
+            }
+
+            img.classList.toggle('cng')
+        }
+    </script>
+
+
+</body>
+</html>

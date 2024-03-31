@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            display: block;
+        }
+        input{
+            margin: 20px 0px;
+        }
+        div{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>Enter image : </div>
+    <input id="input" type="file" onchange="changeProfile()">
+    <img id="img" src="" alt="no picture">
+
+    <script>
+        let input = document.getElementById('input')
+
+        let img = document.getElementById('img')
+        
+        function changeProfile() {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                img.setAttribute('src',e.target.result)
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    </script>
+</body>
+</html>

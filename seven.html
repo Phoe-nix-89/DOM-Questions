@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    
+
+    <input type="text" id="input" onkeyup="myfunc()">
+    <h2 style="margin-top: 15px; margin-bottom: 15px;">Results:</h2>
+    <ul>
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">Tailwind CSS</a></li>
+        <li><a href="#">GitHub</a></li>
+        <li><a href="#">Javascript</a></li>
+    </ul>
+
+    <script>
+        function myfunc() {
+            let input = document.getElementById('input')
+            let ul = document.getElementsByTagName('ul')
+            let v = input.value.toUpperCase();
+            let li = document.getElementsByTagName('li');
+            for(let i=0;i<li.length;i++){
+                // let li = document.getElementsByTagName('li')[i];
+                // let val = li.innerHTML;
+                // let itxt = input.value;
+                // if(val.includes(itxt)){
+                //     li.style.display = "";
+                // }
+                // else{
+                //     li.style.display = "none";
+                // }
+                let a = li[i].getElementsByTagName('a')[0];
+
+                let val = a.innerText || a.textContent;
+                // console.log(v);
+
+                if(val.indexOf(v) > -1){
+                    a.style.display = "";
+                }
+                else{
+                    a.style.display = "none";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>

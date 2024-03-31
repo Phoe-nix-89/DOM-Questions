@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    
+
+    <form action="" id="form">
+        <h1>Sign Up Form</h1>
+        <div style="margin-bottom: 10px;">
+            <div style="display: inline;">Name : </div>
+            <input id="input1" type="text" placeholder="( Minumum 3 characters)">
+        </div>
+        <div style="margin-bottom: 10px;">
+            <div style="display: inline;">Email : </div>
+            <input id="input2" type="text" placeholder="Enter your Email">
+        </div>
+        <div style="margin-bottom: 10px;">
+            <div style="display: inline;">Password : </div>
+            <input id="input3" type="text" placeholder="( Minumum 8 characters)">
+        </div>
+        <div>
+            <button id="btn">Submit</button>
+        </div>
+    </form>
+
+
+    <script>
+        let btn = document.getElementById('btn')
+        let in1 = document.getElementById('input1')
+        let in2 = document.getElementById('input2')
+        let in3 = document.getElementById('input3')
+
+        function getval() {
+            let v1 = in1.value;
+            let v2 = in2.value;
+            let v3 = in3.value;
+
+            if(v1.length >= 3 && v3.length >= 8){
+                alert("Form validation successful");
+            }
+            else{
+                alert("Form validation failed");
+            }
+            //console.log(v);
+            document.getElementById('in1').innerHTML = event.preventDefault();
+        }
+
+        btn.addEventListener('click',getval);
+    </script>
+
+
+</body>
+</html>

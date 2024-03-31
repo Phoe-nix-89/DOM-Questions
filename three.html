@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <h1 id="heading">Counter</h1>
+    <button id="btn1" style="display: inline; margin-right: 5px;" onclick="subtract()">-</button>
+    <div id="val" style="display: inline; font-size: 30px;">0</div>
+    <button id="btn2" style="display: inline; margin-left: 5px;" onclick="add()">+</button>
+
+    <script>
+        let btn1 = document.getElementById('btn1')
+        let btn2 = document.getElementById('btn2')
+        let v = document.getElementById('val')
+
+        function add(){
+            let n = v.innerHTML;
+            let nv = Number(n)
+            nv = nv+1;
+            v.innerHTML = String(nv)
+        }
+
+        function subtract() {
+            let n = v.innerHTML;
+            let nv = Number(n)
+            nv = nv-1;
+            if(nv < 0){
+                function display() {
+                    alert("below 0")
+                }
+                display()
+                return;
+            }
+            v.innerHTML = String(nv)
+        }
+    </script>
+</body>
+</html>

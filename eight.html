@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+        }
+        h1{
+            border: 2px solid white;
+            padding: 10px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 id="id" onload="myfunc()"></h1>
+    
+
+    <script>
+        function myfunc() {
+            let dt = new Date();
+            let hr = dt.getHours();
+            let min = dt.getMinutes();
+            let sec = dt.getSeconds();
+
+            if(hr < "10"){
+                hr = "0" + hr
+            }
+            if(min < "10"){
+                min = "0" + min
+            }
+            if(sec < "10"){
+                sec = "0" + sec
+            }
+
+            let v = hr + " : "+ min + " : "+ sec;
+            let h1 = document.getElementById('id');
+
+            h1.innerHTML = v;
+            let clr = "#" + hr + min + sec;
+            let body = document.body;
+            body.style.backgroundColor = clr;
+            let t = setTimeout(myfunc, 1000);
+        }
+
+        myfunc();
+
+    </script>
+
+
+</body>
+</html>
